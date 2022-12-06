@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+</head>
+
+<body>
+    <h1>The Good Form</h1>
+    <form onsubmit="save(event)">
+        <input type="text" name="petName" />
+        <input type="color" name="petColor" />
+        <button>Go</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>
+        function save(ev) {
+            // ev.preventDefault()
+
+            const petName = document.querySelector('[name=petName]').value
+            const petColor = document.querySelector('[name=petColor]').value
+            console.log('Saving...', petName, petColor)
+        }
+    </script>
+</body>
+
+</html>

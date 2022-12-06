@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        .box {width:350px;height:70px;padding:10px;margin: 10px;}
+        #div1 {background-color: #CC99CC}
+        #div2 {background-color: cadetblue}
+    </style>
+    <script>
+        function allowDrop(ev) {
+            console.log('allow drop')
+            ev.preventDefault()
+        }
+
+        function drag(ev) {
+            
+            ev.dataTransfer.setData("text", ev.target.id)
+            console.log(ev)
+        }
+
+        function drop(ev) {
+            ev.preventDefault()
+            var data = ev.dataTransfer.getData("text")
+            ev.target.appendChild(document.getElementById(data))
+        }
+    </script>
+</head>
+<body>
+
+<div class="box" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div class="box" id="div2" ></div>
+
+<img id="drag1" src="images/logo.png" draggable="true"
+     ondragstart="drag(event)" width="100">
+
+</body>
+</html>

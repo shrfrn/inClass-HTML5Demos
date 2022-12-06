@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Video</title>
+    <script>
+        function toggleVideo() {
+            // var elVideo = document.querySelector('video')
+            if (myVideo.paused) myVideo.play()
+            else myVideo.pause()
+        }    
+    </script>
+</head>
+
+<body>
+    <video id="myVideo" autoplay muted loop controls>
+        <source src="video/big_buck_bunny.mp4" />
+        <source src="video/big_buck_bunny.ogv" />
+        <source src="video/big_buck_bunny.webm" />
+        <object type="application/x-shockwave-flash" width="600" height="400">
+            <param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=1084537" />
+        </object>
+    </video>
+    <button onclick="toggleVideo()">Toggle</button>
+</body>
+
+</html>
