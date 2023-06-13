@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Title of the document</title>
-
+    <title>Title of the document</title>
     <style>
         body style {
             display: block;
+            padding: 20px;
             background: #333;
             color: white;
-            font: 13px/1.8 Monaco, Mono-Space;
+            font: 20px monospace; 
             white-space: pre;
         }
     </style>
-
-
 </head>
 
 <body>
 
-
-<div contenteditable onblur="save(this)">
-    <p>lala</p>
-    <h1>Edit Heading Or The Page Style</h1>
-</div>
-
-
-<style contenteditable>
-    body {
-        background: green;
-    }
-</style>
+    <div contenteditable onblur="save(this)">
+        <p>lala</p>
+        <h1>Edit Heading Or The Page Style</h1>
+    </div>
 
 
-<script>
-    function save(el){
-        console.log('Saving:', el.innerHTML)
-    }
-</script>
+    <style contenteditable>
+        body {
+            background: green;
+        }
+    </style>
 
-
-
+    <script>
+        function save(el){
+            console.log('Saving:', el.innerHTML)
+        }
+    </script>
 </body>
 
 </html> 
