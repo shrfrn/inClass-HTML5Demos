@@ -26,7 +26,7 @@ function showLocation(position) {
     var date = new Date(position.timestamp)
     document.getElementById("timestamp").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
     
-    initMap(lat, lng)
+    // initMap(lat, lng)
 }
 
 function initMap(lat = 31, lng = 31) {
