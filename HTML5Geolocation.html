@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>HTML5 Geolocation</title>
-        <link rel="stylesheet" href="geo-location.css">
-    </head>
-    <body onload="getPosition()">
+	<head>
+		<title>HTML5 Geolocation</title>
+		<link rel="stylesheet" href="geo-location.css" />
+	</head>
+	<body onload="getPosition()">
+		<h2>Current Position:</h2>
 
-        <h2>Current Position:</h2>
-        
-        <table>
-            <tr>
-                <td>Latitude</td>
-                <td id="latitude"></td>
-            </tr>
-            <tr>
-                <td>Longitude</td>
-                <td id="longitude"></td>
-            </tr>
-            <tr>
-                <td>Accuracy</td>
-                <td id="accuracy"></td>
-            </tr>
-            <tr>
-                <td>Timestamp</td>
-                <td id="timestamp"></td>
-            </tr>
-        </table>
+		<table>
+			<tr>
+				<td>Latitude</td>
+				<td id="latitude"></td>
+			</tr>
+			<tr>
+				<td>Longitude</td>
+				<td id="longitude"></td>
+			</tr>
+			<tr>
+				<td>Accuracy</td>
+				<td id="accuracy"></td>
+			</tr>
+			<tr>
+				<td>Timestamp</td>
+				<td id="timestamp"></td>
+			</tr>
+		</table>
 
-        <p id="locationError"></p>
-        <div class="map"></div>
+		<p id="locationError"></p>
+		<div class="map"></div>
 
-        <script src="js/geo-location.js"></script>
-        <!-- <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlosubawbrEg4dw99XpF_OeqClV8kVw2A">
-        </script> -->
-    </body>
+		<script src="js/geo-location.js"></script>
+
+        <!-- Google Maps - Minimal Script -->
+		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlosubawbrEg4dw99XpF_OeqClV8kVw2A&loading=async"></script>
+
+        <!-- Google Maps - More Options -->
+		<!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlosubawbrEg4dw99XpF_OeqClV8kVw2A&loading=async&libraries=marker&callback=mapReady"></script> -->
+
+	</body>
 </html>
