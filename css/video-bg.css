@@ -1,0 +1,64 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero {
+    position: relative;
+    display: grid;
+    place-items: center;
+    
+    min-height: 100vh;
+    background-color: #3332;
+    overflow: clip;
+
+    color: white;
+    text-align: center;
+}
+
+.hero > * {
+    grid-area: 1 / 1;
+}
+
+.video-bg {
+    position: absolute;
+    z-index: -1;
+
+    min-width: 100%;
+    min-height: 100%;
+}
+
+nav {
+    display: flex;
+    gap: 1.8em;
+
+    place-self: start end;
+    padding-block-start: 2em;
+    padding-inline-end: 2em;
+
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.columns {
+    columns: 3 220px;
+    padding: 1em;
+}
+
+.columns p {
+    margin-block-start: 0;
+}
+
+.columns h2 {
+    column-span: all;
+    text-align: center;
+    padding-block: 1em;
+    background-color: lightgray;
+}
