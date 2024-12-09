@@ -23,12 +23,12 @@ function showLocation(position) {
     console.log(position)
     const { latitude: lat, longitude: lng, accuracy } = position.coords
 
-    document.getElementById("latitude").innerHTML = lat
-    document.getElementById("longitude").innerHTML = lng
-    document.getElementById("accuracy").innerHTML = accuracy
+    document.getElementById("latitude").innerText = lat
+    document.getElementById("longitude").innerText = lng
+    document.getElementById("accuracy").innerText = accuracy
 
     var date = new Date(position.timestamp)
-    document.getElementById("timestamp").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+    document.getElementById("timestamp").innerText = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
     
     initMap(lat, lng)
 }
