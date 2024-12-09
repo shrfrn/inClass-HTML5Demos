@@ -40,6 +40,13 @@ td:hover {
     background-color: lightgray;
 }
 
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-block-end: 1em;
+}
+
 .map {
     width: 70vw;
     height: 40vh;
