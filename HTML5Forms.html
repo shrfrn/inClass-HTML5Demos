@@ -4,12 +4,18 @@
 <head>
     <title>HTML5 Forms</title>
     <link rel="stylesheet" href="css/form.css">
+    <style>
+        input:user-invalid {
+            border: 1px solid red;            
+        }
+
+    </style>
 </head>
 
 <body>
     <h2>Sign Up Form</h2>
 
-    <form id="frmRegister" onsubmit="submit(event)">
+    <form id="frmRegister" onsubmit="onSubmit(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" required name="fullName" placeholder="First and last name" />
         
@@ -42,7 +48,6 @@
         <label for="imgFiles">Select images:</label>
         <input type="file" id="imgFiles" name="imgFiles" multiple />
         
-        <!-- <input type="submit" value="Register" /> -->
         <button>Register</button>
         <button formnovalidate>Register (no validate)</button>
         <button type="reset">Reset</button>
@@ -59,9 +64,9 @@
     </section>
 
     <datalist id="contactList">
-        <option value="puky@puk.com" label="Puki" />
-        <option value="support@example.com" label="Support" />
-        <option value="admin@example.com" label="Administrator" />
+        <option value="puky@puk.com" label="Puki"></option>
+        <option value="support@example.com" label="Support"></option>
+        <option value="admin@example.com" label="Administrator"></option>
     </datalist>
     
     <script>
@@ -85,13 +90,16 @@
             elConfirmPass.setCustomValidity('')
         }
 
-        window.addEventListener('submit', (ev) => {
+        function onSubmit(ev) {
             ev.preventDefault()
-        })
 
-        function submit(ev) {
-            ev.preventDefault()
-            console.log('ev', ev)
+            const formData = new FormData()
+            
+            const elInputs = document.querySelectorAll('[name]')
+            elInputs.forEach(elInput => formData.append(elInput.name, elInput.value))
+
+            console.log(Array.from(formData.entries()))
+            ev.target.reset()
         }
     </script>
 </body>
