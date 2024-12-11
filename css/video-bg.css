@@ -1,3 +1,33 @@
+/* 
+    Stacking Order Within the Same Stacking Context
+    -----------------------------------------------
+    Here are the basic rules to determine stacking order 
+    within a single stacking context (from back to front):
+
+    1. The stacking context’s root element
+    2. Positioned elements with negative z-index values
+    3. Non-positioned elements
+    4. Positioned elements with a z-index value of auto
+    5. Positioned elements with positive z-index values
+
+    positioned elements with negative z-indexes are ordered 
+    first within a stacking context, which means they 
+    appear behind all other elements. 
+    Because of this, it becomes possible for an element 
+    to appear behind its own parent.
+
+    body {                  // the default stacking context
+        .hero {             // z-index: auto;
+            .video-bg {     // z-index: -1; - appears behind .hero
+            
+            }
+        }
+    }
+    
+    .hero has a background color with opacity.
+    .video-bg appears behind .hero and seen through the semi-transparent bgc.
+*/
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
